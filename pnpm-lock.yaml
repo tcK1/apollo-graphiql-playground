@@ -10,6 +10,12 @@ importers:
       '@types/node': 18.15.3
       typescript: 5.0.2
 
+  package:
+    specifiers:
+      esbuild: ^0.17.12
+    devDependencies:
+      esbuild: 0.17.12
+
   server:
     specifiers:
       '@apollo/server': ^4.5.0

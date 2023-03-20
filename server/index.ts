@@ -1,8 +1,8 @@
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
-import teste from 'apollo-graphiql-playground'
+import a, {teste} from 'apollo-graphiql-playground';
 
-console.log('teste:', teste)
+console.log('teste:', a, teste)
 
 const typeDefs = /* GraphQL */`
   type Book {

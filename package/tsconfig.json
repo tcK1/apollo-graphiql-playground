@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "emitDeclarationOnly": true,
+    "esModuleInterop": true,
+    "outDir": "dist/types",
+    "declaration": true,
+    "strict": true,
+    "jsx": "react",
+  }
+}
