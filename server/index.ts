@@ -1,7 +1,6 @@
-import { ApolloServer } from '@apollo/server';
-import { startStandaloneServer } from '@apollo/server/standalone';
-import {GraphiQLPlugin} from 'apollo-graphiql-playground';
-
+import { ApolloServer } from '@apollo/server'
+import { startStandaloneServer } from '@apollo/server/standalone'
+import { PluginGraphiQLPlayground } from 'apollo-graphiql-playground'
 
 const typeDefs = /* GraphQL */`
   type Book {
@@ -12,7 +11,7 @@ const typeDefs = /* GraphQL */`
   type Query {
     books(x: String): [Book]
   }
-`;
+`
 
 const books = [
   {
@@ -23,22 +22,23 @@ const books = [
     title: 'City of Glass',
     author: 'Paul Auster',
   },
-];
+]
 
 const resolvers = {
   Query: {
     books: () => books,
   },
-};
+}
 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  plugins: [GraphiQLPlugin()]
-});
+  plugins: [PluginGraphiQLPlayground({ shouldPersistHeaders: true })],
+})
 
 const { url } = await startStandaloneServer(server, {
   listen: { port: 4000 },
-});
+})
 
-console.log(`🚀  Server ready at: ${url}`);
+// eslint-disable-next-line no-console
+console.log(`🚀  Server ready at: ${url}`)

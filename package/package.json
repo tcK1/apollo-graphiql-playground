@@ -32,5 +32,8 @@
   "license": "ISC",
   "devDependencies": {
     "esbuild": "^0.17.12"
+  },
+  "dependencies": {
+    "xss": "^1.0.14"
   }
 }
