@@ -10,7 +10,7 @@ const typeDefs = /* GraphQL */`
   }
 
   type Query {
-    books: [Book]
+    books(x: String): [Book]
   }
 `;
 

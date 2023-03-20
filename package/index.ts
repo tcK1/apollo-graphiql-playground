@@ -1,6 +1,6 @@
-const fetchUrl = process.env.GRAPHQL_URL ?? "/graphql";
+const fetchUrl = "/graphql";
 
-const html = `
+const html = /* HTML */`
 <!--
  *  Copyright (c) 2021 GraphQL Contributors
  *  All rights reserved.
@@ -11,13 +11,18 @@ const html = `
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/12972006?s=200&v=4"/>
+
     <title>GraphiQL</title>
     <style>
       body {
+        --color-base: 219, 29%, 18%;
+
         height: 100%;
         margin: 0;
         width: 100%;
         overflow: hidden;
+        background-color: hsl(var(--color-base));
       }
 
       #graphiql {
@@ -33,14 +38,10 @@ const html = `
       include them directly in your favored resource bundler.
     -->
     <script
-      src="https://unpkg.com/react@17/umd/react.development.js"
-      integrity="sha512-Vf2xGDzpqUOEIKO+X2rgTLWPY+65++WPwCHkX2nFMu9IcstumPsf/uKKRd5prX3wOu8Q0GBylRpsDB26R6ExOg=="
-      crossorigin="anonymous"
+      src="https://unpkg.com/react@18/umd/react.development.js"
     ></script>
     <script
-      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
-      integrity="sha512-Wr9OKCTtq1anK0hq5bY3X/AvDI5EflDSAh0mE9gma+4hl+kXdTJPKZ3TwLMBcrgUeoY0s3dq9JjhCQc7vddtFg=="
-      crossorigin="anonymous"
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
     ></script>
 
     <!--
@@ -52,28 +53,42 @@ const html = `
   </head>
 
   <body>
-    <div id="graphiql">Loading...</div>
+    <div id="graphiql"></div>
     <script
       src="https://unpkg.com/graphiql/graphiql.min.js"
-      type="application/javascript"
     ></script>
     <script>
       const fetcher = GraphiQL.createFetcher({
         url: '${fetchUrl}',
       })
-      ReactDOM.render(
+
+      const props = {}
+
+      const tabState = localStorage.getItem('graphiql:tabState')
+
+      if (tabState) {
+        const { tabs, activeTabIndex } = JSON.parse(tabState);
+
+        props.query = tabs[activeTabIndex].query;
+        props.headers = tabs[activeTabIndex].headers;
+        props.variables = tabs[activeTabIndex].variables;
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById('graphiql'));
+      root.render(
         React.createElement(GraphiQL, {
           fetcher,
           defaultEditorToolsVisibility: true,
+          ...props
         }),
-        document.getElementById('graphiql'),
       );
     </script>
   </body>
 </html>
 `;
 
-export const GraphiQLPlugin = () => ({
+export const GraphiQLPlugin = () => {
+  return({
   async serverWillStart() {
     return {
       async renderLandingPage() {
@@ -81,5 +96,5 @@ export const GraphiQLPlugin = () => ({
       },
     };
   },
-});
+})};
 
