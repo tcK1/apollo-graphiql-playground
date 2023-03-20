@@ -6,7 +6,9 @@
     "packages/*"
   ],
   "scripts": {
-    "dev:server": "pnpm --filter server dev"
+    "dev:server": "pnpm --filter server dev",
+    "dev:package": "pnpm --filter apollo-graphiql-playground dev",
+    "types": "pnpm --filter apollo-graphiql-playground types"
   },
   "engines": {
     "node": ">=16"

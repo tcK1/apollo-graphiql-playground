@@ -1,8 +1,7 @@
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
-import a, {teste} from 'apollo-graphiql-playground';
+import {GraphiQLPlugin} from 'apollo-graphiql-playground';
 
-console.log('teste:', a, teste)
 
 const typeDefs = /* GraphQL */`
   type Book {
@@ -35,6 +34,7 @@ const resolvers = {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  plugins: [GraphiQLPlugin()]
 });
 
 const { url } = await startStandaloneServer(server, {
