@@ -1,11 +1,13 @@
 import xss from 'xss'
 
-interface PluginGraphiQLPlaygroundOptions {
+interface ApolloServerPluginLandingPageGraphiQLPlaygroundOptions {
   url?: string
   shouldPersistHeaders?: boolean
 }
 
-const generateHtml = ({ url = '/graphql', shouldPersistHeaders }: PluginGraphiQLPlaygroundOptions = {}) => /* HTML */`
+const generateHtml = (
+  { url = '/graphql', shouldPersistHeaders }: ApolloServerPluginLandingPageGraphiQLPlaygroundOptions = {},
+) => /* HTML */`
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -32,6 +34,7 @@ const generateHtml = ({ url = '/graphql', shouldPersistHeaders }: PluginGraphiQL
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/graphiql/graphiql.min.js"></script>
 
+    <script src="https://unpkg.com/@graphiql/plugin-explorer/dist/graphiql-plugin-explorer.umd.js"></script>
 
     <link rel="stylesheet" href="https://unpkg.com/graphiql/graphiql.min.css" />
   </head>
@@ -58,21 +61,34 @@ const generateHtml = ({ url = '/graphql', shouldPersistHeaders }: PluginGraphiQL
         props.variables = tabs[activeTabIndex].variables;
       }
 
+      function GraphiQLWithPlugins() {
+        var [query, setQuery] = React.useState(props.query);
 
-      const root = ReactDOM.createRoot(document.getElementById('graphiql'));
-      root.render(
-        React.createElement(GraphiQL, {
+        var explorerPlugin = GraphiQLPluginExplorer.useExplorerPlugin({
+          query: query,
+          onEdit: setQuery,
+        });
+
+        return React.createElement(GraphiQL, {
           fetcher,
           defaultEditorToolsVisibility: true,
-          ...props
-        }),
-      );
+          ...props,
+          plugins: [explorerPlugin],
+          query: query,
+          onEditQuery: setQuery,
+        });
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById('graphiql'));
+      root.render(React.createElement(GraphiQLWithPlugins));
     </script>
   </body>
 </html>
 `
 
-export const PluginGraphiQLPlayground = (options?: PluginGraphiQLPlaygroundOptions) => {
+export const ApolloServerPluginLandingPageGraphiQLPlayground = (
+  options?: ApolloServerPluginLandingPageGraphiQLPlaygroundOptions,
+) => {
   const html = generateHtml(options)
 
   return ({
