@@ -1,6 +1,6 @@
 import { ApolloServer } from '@apollo/server'
 import { startStandaloneServer } from '@apollo/server/standalone'
-import { PluginGraphiQLPlayground } from 'apollo-graphiql-playground'
+import { ApolloServerPluginLandingPageGraphiQLPlayground } from 'apollo-graphiql-playground'
 
 const typeDefs = /* GraphQL */`
   type Book {
@@ -33,7 +33,7 @@ const resolvers = {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  plugins: [PluginGraphiQLPlayground({ shouldPersistHeaders: true })],
+  plugins: [ApolloServerPluginLandingPageGraphiQLPlayground({ shouldPersistHeaders: true })],
 })
 
 const { url } = await startStandaloneServer(server, {
