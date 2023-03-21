@@ -2,13 +2,13 @@
   "name": "project",
   "version": "0.0.0",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": ["package", "server"],
   "scripts": {
     "dev:server": "pnpm --filter server dev",
     "dev:package": "pnpm --filter apollo-graphiql-playground dev",
-    "types": "pnpm --filter apollo-graphiql-playground types"
+    "build": "pnpm --filter apollo-graphiql-playground build",
+    "types": "pnpm --filter apollo-graphiql-playground types",
+    "ci:publish": "pnpm types && pnpm build && pnpm publish -r"
   },
   "engines": {
     "node": ">=16"
@@ -16,6 +16,7 @@
   "packageManager": "pnpm@7.29.3",
   "devDependencies": {
     "@antfu/eslint-config": "^0.37.0",
+    "@changesets/cli": "^2.26.0",
     "@types/node": "^18.15.3",
     "eslint": "^8.36.0",
     "typescript": "^5.0.2"

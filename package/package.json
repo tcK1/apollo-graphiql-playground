@@ -24,12 +24,9 @@
     "build:cjs": "esbuild index.ts --minify --outfile=dist/cjs/index.cjs --format=cjs --keep-names",
     "build:esm": "esbuild index.ts --minify --outfile=dist/esm/index.mjs",
     "build": "pnpm build:cjs && pnpm build:esm",
-    "types": "pnpm tsc",
+    "types": "tsc",
     "dev": "pnpm build:esm --watch"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "esbuild": "^0.17.12"
   },
