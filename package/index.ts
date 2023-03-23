@@ -30,11 +30,11 @@ const generateHtml = (
       }
     </style>
 
-    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/graphiql/graphiql.min.js"></script>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js" integrity="sha384-tMH8h3BGESGckSAVGZ82T9n90ztNXxvdwvdM6UoR56cYcf+0iGXBliJ29D+wZ/x8" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js" integrity="sha384-bm7MnzvK++ykSwVJ2tynSE5TRdN+xL418osEVF2DE/L/gfWHj91J2Sphe582B1Bh" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/graphiql@2.4.0/graphiql.min.js" integrity="sha384-MVcRONLrOPBea05C9lB5pu31zTbPkbZI/gIn2y0r5xH6GefRkJcnrBGlY4zo2nwC" crossorigin="anonymous"></script>
 
-    <script src="https://unpkg.com/@graphiql/plugin-explorer/dist/graphiql-plugin-explorer.umd.js"></script>
+    <script src="https://unpkg.com/@graphiql/plugin-explorer@0.1.14/dist/graphiql-plugin-explorer.umd.js" integrity="sha384-rbN7vYh67VVbUGRkgCVTFu0Pk25KR5Ns9b6sOyPHf5GiYat1ce44UEF5I+HqE2Dg" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://unpkg.com/graphiql/graphiql.min.css" />
   </head>
