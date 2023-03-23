@@ -2,6 +2,11 @@
   "name": "apollo-graphiql-playground",
   "version": "0.1.0",
   "description": "Apollo Server plugin for the GraphiQL Playground",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tcK1/apollo-graphiql-playground.git"
+  },
   "main": "dist/cjs/index.cjs",
   "module": "dist/esm/index.mjs",
   "exports": {
