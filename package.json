@@ -8,7 +8,6 @@
     "dev:package": "pnpm --filter apollo-graphiql-playground dev",
     "build": "pnpm --filter apollo-graphiql-playground build",
     "types": "pnpm --filter apollo-graphiql-playground types",
-    "ci:version": "pnpm changeset version && pnpm install",
     "ci:publish": "pnpm types && pnpm build && pnpm publish -r"
   },
   "engines": {
