@@ -1,6 +1,6 @@
 {
   "name": "apollo-graphiql-playground",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Apollo Server plugin for the GraphiQL Playground",
   "main": "dist/cjs/index.cjs",
   "module": "dist/esm/index.mjs",
