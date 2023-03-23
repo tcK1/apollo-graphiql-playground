@@ -1,5 +1,11 @@
 # apollo-graphiql-playground
 
+## 0.1.2
+
+### Patch Changes
+
+- e846eb6: add keywords
+
 ## 0.1.1
 
 ### Patch Changes
