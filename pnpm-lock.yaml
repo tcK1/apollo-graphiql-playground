@@ -28,7 +28,7 @@ importers:
   server:
     specifiers:
       '@apollo/server': ^4.5.0
-      apollo-graphiql-playground: workspace:^0.0.1
+      apollo-graphiql-playground: workspace:^*
       graphql: ^16.6.0
       tsx: ^3.12.5
     dependencies:
