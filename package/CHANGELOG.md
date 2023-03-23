@@ -1,5 +1,11 @@
 # apollo-graphiql-playground
 
+## 0.1.1
+
+### Patch Changes
+
+- d203924: update package details
+
 ## 0.1.0
 
 ### Minor Changes
