@@ -11,7 +11,7 @@ const generateHtml = (
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/12972006?s=200&v=4"/>
+    <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/12972006?s=200&v=4" crossorigin="anonymous" />
 
     <title>GraphiQL</title>
     <style>
@@ -30,13 +30,28 @@ const generateHtml = (
       }
     </style>
 
-    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js" integrity="sha384-tMH8h3BGESGckSAVGZ82T9n90ztNXxvdwvdM6UoR56cYcf+0iGXBliJ29D+wZ/x8" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js" integrity="sha384-bm7MnzvK++ykSwVJ2tynSE5TRdN+xL418osEVF2DE/L/gfWHj91J2Sphe582B1Bh" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/graphiql@2.4.0/graphiql.min.js" integrity="sha384-MVcRONLrOPBea05C9lB5pu31zTbPkbZI/gIn2y0r5xH6GefRkJcnrBGlY4zo2nwC" crossorigin="anonymous"></script>
+    <script
+      src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"
+      integrity="sha384-tMH8h3BGESGckSAVGZ82T9n90ztNXxvdwvdM6UoR56cYcf+0iGXBliJ29D+wZ/x8"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"
+      integrity="sha384-bm7MnzvK++ykSwVJ2tynSE5TRdN+xL418osEVF2DE/L/gfWHj91J2Sphe582B1Bh"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://unpkg.com/graphiql@2.4.7/graphiql.min.js"
+      integrity="sha384-8da92RVD56z/pbOOnJ4Ud5qlhqEzDtJI6qVZjN88SCbOatpo4xVDeP3T0nmfTf+9"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://unpkg.com/@graphiql/plugin-explorer@0.1.20/dist/graphiql-plugin-explorer.umd.js"
+      integrity="sha384-ztwsGhpB3sp5hqNaC64khLsB8XGJYrvaOwbohLnL3o3iPF77F+j9jTzPlZQGOAH0"
+      crossorigin="anonymous"
+    ></script>
 
-    <script src="https://unpkg.com/@graphiql/plugin-explorer@0.1.14/dist/graphiql-plugin-explorer.umd.js" integrity="sha384-rbN7vYh67VVbUGRkgCVTFu0Pk25KR5Ns9b6sOyPHf5GiYat1ce44UEF5I+HqE2Dg" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="https://unpkg.com/graphiql/graphiql.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/graphiql/graphiql.min.css" crossorigin="anonymous" />
   </head>
 
   <body>
