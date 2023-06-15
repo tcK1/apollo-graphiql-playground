@@ -1,5 +1,11 @@
 # apollo-graphiql-playground
 
+## 0.1.3
+
+### Patch Changes
+
+- 32136c5: Bump package versions
+
 ## 0.1.2
 
 ### Patch Changes
