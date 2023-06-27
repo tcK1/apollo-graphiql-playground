@@ -1,5 +1,11 @@
 # apollo-graphiql-playground
 
+## 0.1.4
+
+### Patch Changes
+
+- 2b4caf5: bump graphiql and graphiql-explorer
+
 ## 0.1.3
 
 ### Patch Changes
