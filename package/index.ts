@@ -37,15 +37,16 @@ const generateHtml = ({
       </style>
 
       <script
-        src="https://unpkg.com/react@18/umd/react.production.min.js"
-        integrity="sha384-tMH8h3BGESGckSAVGZ82T9n90ztNXxvdwvdM6UoR56cYcf+0iGXBliJ29D+wZ/x8"
+        src="https://www.unpkg.com/react@18.3.1/umd/react.production.min.js"
+        integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z"
         crossorigin="anonymous"
       ></script>
       <script
-        src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
-        integrity="sha384-bm7MnzvK++ykSwVJ2tynSE5TRdN+xL418osEVF2DE/L/gfWHj91J2Sphe582B1Bh"
+        src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"
+        integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1"
         crossorigin="anonymous"
       ></script>
+      
       <script
         src="https://unpkg.com/graphiql@3.0.0/graphiql.min.js"
         integrity="sha384-Eqxb3y1DI7Ndw2RMd4uMbXrtm6NoEW7ru9Y0D8xr+MEPgEZm74pT38DWgdoLlVNx"
