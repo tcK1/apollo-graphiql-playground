@@ -1,5 +1,11 @@
 # apollo-graphiql-playground
 
+## 0.1.5
+
+### Patch Changes
+
+- e1fa35c: feat: change unpkg package versions
+
 ## 0.1.4
 
 ### Patch Changes
